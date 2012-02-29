@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QRl bookmarklet</title>
+	<style>
+		
+		html {
+
+
+		}
+		
+		body {
+			font-family: Verdana;
+		}
+		
+		
+		
+		h1 {
+			border: 10px solid #fff;
+			position: relative;
+			text-align: center;
+			line-height: 65px;
+			background: #000;
+			margin: 0;
+			height: 65px;
+			color: #fff;
+			width: 65px;
+		}
+		
+		h1:after {
+			border: 10px solid #000;
+			position: absolute;
+			bottom: -20px;
+			right: -20px;
+			content: "";
+			left: -20px;
+			top: -20px;
+		}
+		
+		
+		.qr-left {
+			border-left: 1px dotted #000;
+			border-top: 1px dotted #000;
+			position: relative;
+			padding: 2em 1em;
+			margin: 0;
+		}
+		
+		.qr-left:before {
+			position: absolute;
+			content: "";
+			
+			top: -32px;
+			right: 0;
+			outline: 5px solid #000;
+			border: 5px solid #fff;
+			background: #000;
+			height: 32px;
+			width: 32px;
+		
+			z-index: 5;
+		}
+		
+		.qr-bottom {
+			position: relative;
+			
+			border-left: 1px dotted #000;
+			padding: 0 1em 4em 1em;
+			margin: 0;
+		}
+		
+		.qr-bottom:before {
+			position: absolute;
+			content: "";
+			
+			bottom: 0;
+			left: 0;
+			outline: 5px solid #000;
+			border: 5px solid #fff;
+			background: #000;
+			height: 32px;
+			width: 32px;
+		}
+		
+
+		article {
+			background: #fff;
+			margin: 7em auto 1em auto;
+			padding: 10px;
+			min-width: 220px;
+			width: 50%;
+			max-width: 620px;
+		}
+		
+		@media only screen and (min-width: 480px) {
+		/* Style adjustments for viewports 480px and over go here */
+
+			.qr-bottom {
+				padding: .5em 1em 1em 4.2em;
+				border: none;
+			}
+			
+			.qr-bottom:before {
+				bottom: auto;
+				top: 0;
+			}
+		  
+		}
+
+	
+	</style>
+</head>
+<body>
+	<article>
+		<h1>QRl</h1>
+		
+		<p class="qr-left">
+			QRl is a small bookmarklet to show the URL of the current page as a QR Code. This might be useful if you want to browse the page you viewing using your smartphone for example.		
+		</p>
+		
+		<p class="qr-bottom">
+			To install, drag the following link to your bookmarks bar: <a href="javascript:(function(){var c=document.createElement('div');c.setAttribute('onclick','this.style.display =\'none\';');c.setAttribute('style', 'position:fixed;z-index:9000;top:0;right:0;padding:1em 1em .5em;background:rgba(0,0,0,.8);cursor:pointer;font-family:Verdana');var qr=document.createElement('img');qr.src='https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl='+encodeURIComponent(document.URL);c.appendChild(qr);var d=document.createElement('div');d.setAttribute('style','font-style:italic;color:rgba(255,255,255,.42);font-size:11px;text-align:left;padding-top:.23em');d.textContent='Click to hide';var a=document.createElement('a');a.href='https://github.com/stroebjo/qrl';a.textContent='Info';a.setAttribute('style','float:right;color:rgba(255,255,255,.42);');c.appendChild(d);d.appendChild(a);document.body.appendChild(c);})();">QRl</a>.
+		</p>
+	</article>
+</body>
+</html>
